@@ -10,9 +10,43 @@ A punctuation addition library based on the Transformer model
 
  
 
+## 效果（输入均为无标点）
+
+**短句子**
+
+![7d6ed99935765f45cb615c47137bbf6.png](assets/5873dcb540f89a670a3c59ace16933f6bef76623.png)
+
+
+
+**长句子**
+
+![b05cd8a1627a046fef63e2a78ef7813.png](assets/8b3e040b8e9e3eb9447460529b9e105be7d1427d.png)
+
+
+
+**中英文夹杂**
+
+![](assets/2023-10-23-16-13-52-1698048736423.png)
+
+
+
+**带数字效果也很好**
+
+![3db9d9b056bae919609abdbd3052482.png](assets/36304c8ea32b74b2c68d7fde67832ded26acfef0.png)
+
+
+
+**感叹号也可以识别出来**
+
+![](assets/2023-10-23-16-39-20-1698048701212.png)
+
 ### python直接使用
 
+下载本项目、下载模型文件（等待上传），将inference文件和对应模型文件拖入您的项目，调用推理方法即可
+
 ### 使用fastapi
+
+
 
 ## 项目构成（非常详细）
 
@@ -51,3 +85,5 @@ A punctuation addition library based on the Transformer model
 数据集文件，其中lib_dict是指向txt文件具体位置的py文件，用于指定需要将哪些txt文件作为样本。
 
 您可以将自己的数据集或我们为您准备的数据集放入该文件夹内，使用dataclear.py处理
+
+### inference.py
