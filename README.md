@@ -1,5 +1,7 @@
 # easy_punctuation | 针对中文流式语音识别的自监督训练的标点添加/混淆修正模型
 
+A punctuation addition library based on the Transformer model
+
 由于主要针对中文，英文说明就不写了 ：）
 
 本项目基于transformer和bert-chinese，训练数据集只需要正常有标点的文本，不用对应lable之类，此外并无额外限制。
@@ -20,6 +22,10 @@
 
 ### bert-base-chinese
 
+![2023-10-23-14-20-27-1698042020032.png](assets/166fa0c7f32fe235ea8bbadf0a4c8ae5324a3fe4.png)
+
+
+
 本项目仅使用bertbasechinese的tokenizer，目前为区分大小写字母，将26个大写英文放入，具体位置见vocab和tokenizer，其中模型需要自己去huggingface下载，放入本文件夹即可。
 
 若需另外添加特殊字符
@@ -28,13 +34,19 @@
 
         当添加词汇数量较少时，请用方法2：先打开**tokenizer**文件，
 
+![2023-10-23-14-24-46-1698042278379.png](assets/8573bb4c3247105b9db7d8e75cb954b379282ac9.png)
+
 修改unusedxx 部分，例如将”[unused87]“改为”questions“，然后打开**vocab**文件：
+
+![2023-10-23-14-29-38-1698042573284.png](assets/a8670ac7357568e3d1b8b595c0fd109607778c14.png)
 
 在对应行下修改，注意不需要减一等计算操作，unused后面跟的多少数字就是多少行。
 
-A punctuation addition library based on the Transformer model
+
 
 ### ### datas
+
+![](assets/01b593b92656605f2657dc187761b3bc11332a8f.png)
 
 数据集文件，其中lib_dict是指向txt文件具体位置的py文件，用于指定需要将哪些txt文件作为样本。
 
