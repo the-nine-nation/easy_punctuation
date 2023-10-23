@@ -14,13 +14,11 @@
 
 ## 项目构成（非常详细）
 
-![2023-10-23-14-18-07-1698041868596.png](assets\2023-10-23-14-18-07-1698041868596.png)
+![2023-10-23-14-18-07-1698041868596.png](assets/0294713d522f56d70ad75fcce63e4a5dc5d7a925.png)
 
 
 
 ### bert-base-chinese
-
-
 
 本项目仅使用bertbasechinese的tokenizer，目前为区分大小写字母，将26个大写英文放入，具体位置见vocab和tokenizer，其中模型需要自己去huggingface下载，放入本文件夹即可。
 
@@ -32,15 +30,11 @@
 
 修改unusedxx 部分，例如将”[unused87]“改为”questions“，然后打开**vocab**文件：
 
-
-
 在对应行下修改，注意不需要减一等计算操作，unused后面跟的多少数字就是多少行。
 
 A punctuation addition library based on the Transformer model
 
 ### ### datas
-
-
 
 数据集文件，其中lib_dict是指向txt文件具体位置的py文件，用于指定需要将哪些txt文件作为样本。
 
