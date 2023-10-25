@@ -8,7 +8,33 @@ A punctuation addition library based on the Transformer model
 
 目前仍处于项目前中期，请直接下载文件使用，接下来会讲解每个文件的作用。我们并不希望您再安装额外的库。
 
- 
+## 使用方法
+
+### python直接使用
+
+下载本项目、下载模型文件（已上传），将inference文件和对应模型文件拖入您的项目，调用推理方法即可,模型下载地址：
+
+[([lzy510016411/easy_punc at main (huggingface.co)](https://huggingface.co/lzy510016411/easy_punc/tree/main))
+
+### 使用fastapi
+
+服务端：扒下来文档放入项目中，直接运行fastapirun.py
+
+客户端：
+
+```python
+import asyncio
+import aiohttp
+
+async def add_punc(text):
+    url = f"http://127.0.0.1:8000/punc/{text}"
+    async with aiohttp.ClientSession() as session:
+        response = await session.get(url)
+        res = await response.text()
+        return res
+```
+
+修改为自己定的IP和端口即可
 
 ## 效果（输入均为无标点）
 
@@ -17,8 +43,6 @@ A punctuation addition library based on the Transformer model
 输入：设计方面官方称工程师为这款笔记本设计了一款全新的锻造碳纤维A面可在让机身重量更轻的同时为每台笔记本赋予独一无二的外观纹理
 
 输出：设 计 方 面 ， 官 方 称 工 程 师 为 这 款 笔 记 本 ， 设 计 了 一 款 全 新 的 锻 造 碳 纤 维 A 面 ， 可 在 让 机 身 重 量 更 轻 的 同 时 为 每 台 笔 记 本 赋 予 独 一 无 二 的 外 观 纹 理 。
-
-
 
 **长句子**
 
@@ -38,29 +62,7 @@ A punctuation addition library based on the Transformer model
 
 ![](assets/2023-10-23-16-39-20-1698048701212.png)
 
-### python直接使用
-
-下载本项目、下载模型文件（等待上传），将inference文件和对应模型文件拖入您的项目，调用推理方法即可
-
-### 使用fastapi
-
-服务端：扒下来文档放入项目中，直接运行fastapirun.py
-
-客户端：
-
-```python
-import asyncio
-import aiohttp
-
-async def add_punc(text):
-    url = f"http://127.0.0.1:8000/punc/{text}"
-    async with aiohttp.ClientSession() as session:
-        response = await session.get(url)
-        res = await response.text()
-        return res
-```
-
-修改为自己定的IP和端口即可
+### 
 
 ### 模型结构
 
